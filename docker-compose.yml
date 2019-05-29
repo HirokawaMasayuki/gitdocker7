@@ -4,7 +4,7 @@ services:
     container_name: php-book-app-web
     build:
       context: .
-      dockerfile: ./Docker/php/Dockerfile
+      dockerfile: ./Dockerfile
     volumes:
       - .:/var/www/html:cached
     environment:
@@ -20,7 +20,7 @@ services:
     container_name: php-book-app-db
     build:
       context: .
-      dockerfile: ./Docker/mysql/Dockerfile
+      dockerfile: ./Dockerfile
     volumes:
       - ./Docker/mysql/sqls:/docker-entrypoint-initdb.d
       - ./Docker/mysql/data:/var/lib/mysql
